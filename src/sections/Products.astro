@@ -1,9 +1,14 @@
 ---
+import imgManzana from '../assets/img_manzana.png';
+import imgCereza from '../assets/img_cereza.png';
+import imgPalta from '../assets/img_palta.png';
+import imgPasas from '../assets/img_pasas.png';
+
 const products = [
   {
     title: "Manzanas",
     varieties: "Granny Smith, Fuji, Gala",
-    image: "../../src/assets/img_manzana.png",
+    image: imgManzana,
     benefits: [
       "Altas en fibra",
       "Antioxidantes naturales",
@@ -15,7 +20,7 @@ const products = [
   {
     title: "Cerezas",
     varieties: "Bing, Lapins, Regina",
-    image: "../../src/assets/img_cereza.png",
+    image: imgCereza,
     benefits: [
       "Ricas en antioxidantes",
       "Propiedades antiinflamatorias",
@@ -27,7 +32,7 @@ const products = [
   {
     title: "Paltas",
     varieties: "Hass, Fuerte",
-    image: "/img_palta.png",
+    image: imgPalta,
     benefits: [
       "Ricas en grasas saludables",
       "Altas en fibra",
@@ -39,7 +44,7 @@ const products = [
   {
     title: "Pasas",
     varieties: "Uvas secas premium",
-    image: "../../src/assets/img_pasas.png",
+    image: imgPasas,
     benefits: [
       "Altas en fibra",
       "Antioxidantes naturales",
@@ -71,7 +76,7 @@ const products = [
           <!-- Image Container -->
           <div class="relative h-64 overflow-hidden">
             <img 
-              src={product.image} 
+              src={product.image.src} 
               alt={product.title}
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
