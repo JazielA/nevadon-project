@@ -1,0 +1,118 @@
+---
+const products = [
+  {
+    title: "Manzanas",
+    varieties: "Granny Smith, Fuji, Gala",
+    image: "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?q=80&w=1000&auto=format&fit=crop",
+    benefits: [
+      "Altas en fibra",
+      "Antioxidantes naturales",
+      "Apoyan la salud cardiovascular",
+      "Pueden ayudar a prevenir el cáncer"
+    ],
+    icon: "apple"
+  },
+  {
+    title: "Cerezas",
+    varieties: "Bing, Lapins, Regina",
+    image: "https://images.unsplash.com/photo-1528821128474-27f963b062bf?q=80&w=1000&auto=format&fit=crop",
+    benefits: [
+      "Ricas en antioxidantes",
+      "Propiedades antiinflamatorias",
+      "Mejoran el sueño",
+      "Apoyan la salud cardiovascular"
+    ],
+    icon: "cherry"
+  },
+  {
+    title: "Paltas",
+    varieties: "Hass, Fuerte",
+    image: "https://images.unsplash.com/photo-1523049673856-64917da78e6e?q=80&w=1000&auto=format&fit=crop",
+    benefits: [
+      "Ricas en grasas saludables",
+      "Altas en fibra",
+      "Antioxidantes naturales",
+      "Apoyan la salud ocular"
+    ],
+    icon: "avocado"
+  },
+  {
+    title: "Pasas",
+    varieties: "Uvas secas premium",
+    image: "https://images.unsplash.com/photo-1595414368374-66224996672e?q=80&w=1000&auto=format&fit=crop",
+    benefits: [
+      "Altas en fibra",
+      "Antioxidantes naturales",
+      "Apoyan la salud cardiovascular",
+      "Fuente natural de energía"
+    ],
+    icon: "grapes"
+  }
+];
+---
+
+<section id="productos" class="py-20 bg-[#F5F5F0]">
+  <div class="container mx-auto px-4">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <span class="text-sm uppercase tracking-widest text-gray-500 font-medium">Nuestros Productos</span>
+      <h2 class="text-4xl md:text-5xl font-serif font-bold text-[#1a3c25] mt-3 mb-6">
+        Frutas Frescas de Calidad Premium
+      </h2>
+      <p class="max-w-2xl mx-auto text-gray-600 text-lg">
+        Seleccionamos cuidadosamente las mejores variedades de frutas chilenas para satisfacer los más altos estándares internacionales.
+      </p>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {products.map((product) => (
+        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group">
+          <!-- Image Container -->
+          <div class="relative h-64 overflow-hidden">
+            <img 
+              src={product.image} 
+              alt={product.title}
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+            <!-- Icon Badge -->
+            <div class="absolute top-4 right-4 bg-[#F5F5F0] p-2 rounded-full shadow-sm">
+              {product.icon === 'apple' && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"/><path d="M10 2c1 .5 2 2 2 5"/></svg>
+              )}
+              {product.icon === 'cherry' && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z"/><path d="M12 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z"/><path d="M7 11c3.2-2.13 6.4-4.27 9.6-6.4"/><path d="M12 11c-3.2-2.13-6.4-4.27-9.6-6.4"/><path d="M12 5v6"/></svg>
+              )}
+              {product.icon === 'avocado' && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2C5E38" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 0 0 8-8c0-4.42-3.58-8-8-12-4.42 4-8 7.58-8 12a8 8 0 0 0 8 8Z"/><path d="M12 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
+              )}
+              {product.icon === 'grapes' && (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2C5E38" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"/><circle cx="6" cy="10" r="3"/><circle cx="18" cy="10" r="3"/><circle cx="9" cy="15" r="3"/><circle cx="15" cy="15" r="3"/><circle cx="12" cy="20" r="3"/></svg>
+              )}
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="p-6">
+            <h3 class="text-2xl font-serif font-bold text-[#1a3c25] mb-1">{product.title}</h3>
+            <p class="text-sm text-gray-500 mb-6 font-medium">{product.varieties}</p>
+            
+            <div class="space-y-3">
+              <p class="text-xs uppercase tracking-wider text-gray-400 font-semibold">BENEFICIOS PARA LA SALUD</p>
+              <ul class="space-y-2">
+                {product.benefits.map((benefit) => (
+                  <li class="flex items-start gap-2 text-sm text-gray-600">
+                    <svg class="w-4 h-4 text-green-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    {benefit}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
