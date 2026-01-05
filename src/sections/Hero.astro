@@ -1,13 +1,14 @@
 
 ---
+import { Image } from 'astro:assets';
 import heroImg from '../assets/img_hero5.png';
 ---
 
 <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
   <!-- Background Image -->
   <div class="absolute inset-0 z-0">
-    <img 
-      src={heroImg.src}
+    <Image 
+      src={heroImg}
       alt="Campo Chileno" 
       class="w-full h-full object-cover"
     />
