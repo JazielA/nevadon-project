@@ -64,12 +64,13 @@
       <div class="rounded-3xl p-10 md:p-12 bg-white shadow-sm flex flex-col justify-center ">
         <h3 class="text-2xl font-serif font-bold text-[#1a3c25] mb-8">Envíanos un Mensaje</h3>
         
-        <form class="space-y-6">
+        <form class="space-y-6" action="https://formsubmit.co/cc04f02a9eb3aa591f1c3cfc3743e17a" method="POST">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="space-y-2">
               <label for="nombre" class="text-sm font-medium text-gray-700">Nombre</label>
               <input 
                 type="text" 
+                name="Nombre"
                 id="nombre" 
                 placeholder="Tu nombre"
                 class="w-full bg-[#F5F5F0] border-none rounded-lg px-4 py-3 text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-[#2C5E38] focus:outline-none transition-all"
@@ -78,7 +79,8 @@
             <div class="space-y-2">
               <label for="email" class="text-sm font-medium text-gray-700">Email</label>
               <input 
-                type="email" 
+                type="email"
+                name="Email" 
                 id="email" 
                 placeholder="tu@email.com"
                 class="w-full bg-[#F5F5F0] border-none rounded-lg px-4 py-3 text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-[#2C5E38] focus:outline-none transition-all"
@@ -91,6 +93,7 @@
             <input 
               type="text" 
               id="empresa" 
+              name="Empresa"
               placeholder="Nombre de tu empresa"
               class="w-full bg-[#F5F5F0] border-none rounded-lg px-4 py-3 text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-[#2C5E38] focus:outline-none transition-all"
             />
@@ -100,6 +103,7 @@
             <label for="mensaje" class="text-sm font-medium text-gray-700">Mensaje</label>
             <textarea 
               id="mensaje" 
+              name="Mensaje"
               rows="4" 
               placeholder="¿Cómo podemos ayudarte?"
               class="w-full bg-[#F5F5F0] border-none rounded-lg px-4 py-3 text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-[#2C5E38] focus:outline-none transition-all resize-none"
@@ -115,6 +119,9 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
             </svg>
           </button>
+
+          <input type="hidden" name="_next" value="http://localhost:4321/">
+          <input type="hidden"name="_captcha" value="false">
         </form>
       </div>
 
