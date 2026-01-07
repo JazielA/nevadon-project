@@ -4,6 +4,11 @@ import imgManzana from '../assets/images/img_manzana.png';
 import imgCereza from '../assets/images/img_cereza.png';  
 import imgPalta from '../assets/images/img_palta.png';
 import imgPasas from '../assets/images/img_pasas.png';
+import imgNueces from '../assets/images/img_nueces.png';
+import imgMandarina from '../assets/images/img_mandarinas.png';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 
 const products = [
@@ -16,8 +21,7 @@ const products = [
       "Antioxidantes naturales",
       "Apoyan la salud cardiovascular",
       "Pueden ayudar a prevenir el cáncer"
-    ],
-    icon: "apple"
+    ]
   },
   {
     title: "Cerezas",
@@ -28,8 +32,7 @@ const products = [
       "Propiedades antiinflamatorias",
       "Mejoran el sueño",
       "Apoyan la salud cardiovascular"
-    ],
-    icon: "cherry"
+    ]
   },
   {
     title: "Paltas",
@@ -40,8 +43,7 @@ const products = [
       "Altas en fibra",
       "Antioxidantes naturales",
       "Apoyan la salud ocular"
-    ],
-    icon: "avocado"
+    ]
   },
   {
     title: "Pasas",
@@ -52,9 +54,31 @@ const products = [
       "Antioxidantes naturales",
       "Apoyan la salud cardiovascular",
       "Fuente natural de energía"
-    ],
-    icon: "grapes"
-  }
+    ]
+  },
+  {
+    title: "Nueces",
+    varieties: "Fruto seco premium",
+    image: imgNueces.src,
+    benefits: [
+      "Rico en proteínas",
+      "Alto contenido de grasas saludables",
+      "Contribuye a la salud cardiovascular",
+      "Apoya el buen funcionamiento del cerebro"
+    ]
+  },
+  {
+    title: "Mandarinas",
+    varieties: "Clementinas, Satsumas",
+    image: imgMandarina.src,
+    benefits: [
+      "Rico en vitamina C",
+      "Alto contenido de flavonoides",
+      "Fortalece el sistema inmune",
+      "Apoya la salud cardiovascular"
+    ]
+  },
+
 ];
 ---
 
@@ -71,10 +95,12 @@ const products = [
       </p>
     </div>
 
-    <!-- Products Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      {products.map((product) => (
-        <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group">
+    <!-- Products Carousel -->
+    <div class="swiper mySwiper !pb-12">
+      <div class="swiper-wrapper">
+      {[...products, ...products].map((product) => (
+        <div class="swiper-slide h-auto">
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group h-full">
           <!-- Image Container -->
           <div class="relative h-64 overflow-hidden">
             <img 
@@ -83,20 +109,7 @@ const products = [
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <!-- Icon Badge -->
-            <div class="absolute top-4 right-4 bg-[#F5F5F0] p-2 rounded-full shadow-sm">
-              {product.icon === 'apple' && (
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.94c1.5 0 2.75 1.06 4 1.06 3 0 6-8 6-12.22A4.91 4.91 0 0 0 17 5c-2.22 0-4 1.44-5 2-1-.56-2.78-2-5-2a4.9 4.9 0 0 0-5 4.78C2 14 5 22 8 22c1.25 0 2.5-1.06 4-1.06Z"/><path d="M10 2c1 .5 2 2 2 5"/></svg>
-              )}
-              {product.icon === 'cherry' && (
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z"/><path d="M12 17a5 5 0 0 0 10 0c0-2.76-2.5-5-5-3-2.5-2-5 .24-5 3Z"/><path d="M7 11c3.2-2.13 6.4-4.27 9.6-6.4"/><path d="M12 11c-3.2-2.13-6.4-4.27-9.6-6.4"/><path d="M12 5v6"/></svg>
-              )}
-              {product.icon === 'avocado' && (
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2C5E38" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 0 0 8-8c0-4.42-3.58-8-8-12-4.42 4-8 7.58-8 12a8 8 0 0 0 8 8Z"/><path d="M12 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
-              )}
-              {product.icon === 'grapes' && (
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2C5E38" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="3"/><circle cx="6" cy="10" r="3"/><circle cx="18" cy="10" r="3"/><circle cx="9" cy="15" r="3"/><circle cx="15" cy="15" r="3"/><circle cx="12" cy="20" r="3"/></svg>
-              )}
-            </div>
+            
           </div>
 
           <!-- Content -->
@@ -119,7 +132,84 @@ const products = [
             </div>
           </div>
         </div>
+        </div>
       ))}
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
     </div>
+
+<script>
+  import Swiper from 'swiper';
+  import { Pagination, Autoplay, Navigation } from 'swiper/modules';
+
+  const swiper = new Swiper('.mySwiper', {
+    modules: [Pagination, Autoplay, Navigation],
+    observer: true,
+    observeParents: true,
+    slidesPerView: 1.5,
+    centeredSlides: true,
+    spaceBetween: 20,
+    loop: true,
+    autoplay: {
+      delay: 3500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+      dynamicBullets: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      1024: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+    },
+  });
+</script>
+
+<style>
+  :global(.swiper-pagination-bullet) {
+    background-color: #1a3c25;
+    opacity: 0.4;
+  }
+  :global(.swiper-button-next),
+  :global(.swiper-button-prev) {
+    color: #1a3c25;
+    background-color: transparent;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(26, 60, 37, 0.2);
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+  }
+  :global(.swiper-button-next:hover),
+  :global(.swiper-button-prev:hover) {
+    background-color: #1a3c25;
+    color: #ffffff;
+    border-color: #1a3c25;
+    transform: scale(1.05);
+  }
+  :global(.swiper-button-next:after),
+  :global(.swiper-button-prev:after) {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  :global(.swiper-pagination-bullet-active) {
+    background-color: #1a3c25;
+    opacity: 1;
+  }
+</style>
   </div>
 </section>
