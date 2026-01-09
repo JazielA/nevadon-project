@@ -1,0 +1,64 @@
+{
+  "products": [
+    {
+      "title": "Apples",
+      "varieties": "Granny Smith, Fuji, Gala",
+      "benefits": [
+        "High in fiber",
+        "Natural antioxidants",
+        "Support cardiovascular health",
+        "May help prevent cancer"
+      ]
+    },
+    {
+      "title": "Cherries",
+      "varieties": "Bing, Lapins, Regina",
+      "benefits": [
+        "Rich in antioxidants",
+        "Anti-inflammatory properties",
+        "Improve sleep quality",
+        "Support cardiovascular health"
+      ]
+    },
+    {
+      "title": "Avocados",
+      "varieties": "Hass, Fuerte",
+      "benefits": [
+        "Rich in healthy fats",
+        "High in fiber",
+        "Natural antioxidants",
+        "Support eye health"
+      ]
+    },
+    {
+      "title": "Raisins",
+      "varieties": "Premium dried grapes",
+      "benefits": [
+        "High in fiber",
+        "Natural antioxidants",
+        "Support cardiovascular health",
+        "Natural energy source"
+      ]
+    },
+    {
+      "title": "Walnuts",
+      "varieties": "Premium nuts",
+      "benefits": [
+        "Rich in protein",
+        "High in healthy fats",
+        "Supports cardiovascular health",
+        "Promotes good brain function"
+      ]
+    },
+    {
+      "title": "Mandarins",
+      "varieties": "Clementines, Satsumas",
+      "benefits": [
+        "Rich in vitamin C",
+        "High in flavonoids",
+        "Strengthens immune system",
+        "Supports cardiovascular health"
+      ]
+    }
+  ]
+}

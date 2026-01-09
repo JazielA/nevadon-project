@@ -1,5 +1,10 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Importar imágenes
 import imgManzana from '../assets/images/img_manzana.png';
 import imgCereza from '../assets/images/img_cereza.png';  
 import imgPalta from '../assets/images/img_palta.png';
@@ -9,88 +14,36 @@ import imgMandarina from '../assets/images/img_mandarinas.png';
 import 'swiper/css';
 import 'swiper/css/navigation';
 
+// Cargar productos según el idioma
+const productsData = await import(`../content/${lang}/products.json`);
+const productsContent = productsData.default.products;
 
-const products = [
-  {
-    title: "Manzanas",
-    varieties: "Granny Smith, Fuji, Gala",
-    image: imgManzana.src,
-    benefits: [
-      "Altas en fibra",
-      "Antioxidantes naturales",
-      "Apoyan la salud cardiovascular",
-      "Pueden ayudar a prevenir el cáncer"
-    ]
-  },
-  {
-    title: "Cerezas",
-    varieties: "Bing, Lapins, Regina",
-    image: imgCereza.src,
-    benefits: [
-      "Ricas en antioxidantes",
-      "Propiedades antiinflamatorias",
-      "Mejoran el sueño",
-      "Apoyan la salud cardiovascular"
-    ]
-  },
-  {
-    title: "Paltas",
-    varieties: "Hass, Fuerte",
-    image: imgPalta.src,
-    benefits: [
-      "Ricas en grasas saludables",
-      "Altas en fibra",
-      "Antioxidantes naturales",
-      "Apoyan la salud ocular"
-    ]
-  },
-  {
-    title: "Pasas",
-    varieties: "Uvas secas premium",
-    image: imgPasas.src,
-    benefits: [
-      "Altas en fibra",
-      "Antioxidantes naturales",
-      "Apoyan la salud cardiovascular",
-      "Fuente natural de energía"
-    ]
-  },
-  {
-    title: "Nueces",
-    varieties: "Fruto seco premium",
-    image: imgNueces.src,
-    benefits: [
-      "Rico en proteínas",
-      "Alto contenido de grasas saludables",
-      "Contribuye a la salud cardiovascular",
-      "Apoya el buen funcionamiento cerebral"
-    ]
-  },
-  {
-    title: "Mandarinas",
-    varieties: "Clementinas, Satsumas",
-    image: imgMandarina.src,
-    benefits: [
-      "Rico en vitamina C",
-      "Alto contenido de flavonoides",
-      "Fortalece el sistema inmune",
-      "Apoya la salud cardiovascular"
-    ]
-  },
-
+// Mapear imágenes a los productos
+const productImages = [
+  imgManzana.src,
+  imgCereza.src,
+  imgPalta.src,
+  imgPasas.src,
+  imgNueces.src,
+  imgMandarina.src
 ];
+
+const products = productsContent.map((product: any, index: number) => ({
+  ...product,
+  image: productImages[index]
+}));
 ---
 
 <section id="productos" class="py-20 bg-[#F5F5F0]">
   <div class="container mx-auto px-4">
     <!-- Section Header -->
     <div class="text-center mb-16">
-      <span class="text-sm uppercase tracking-widest text-gray-500 font-medium">Nuestros Productos</span>
+      <span class="text-sm uppercase tracking-widest text-gray-500 font-medium">{t('products.badge')}</span>
       <h2 class="text-4xl md:text-5xl font-serif font-bold text-[#1a3c25] mt-3 mb-6">
-        Frutas Frescas de Calidad Premium
+        {t('products.title')}
       </h2>
       <p class="max-w-2xl mx-auto text-gray-600 text-lg">
-        Seleccionamos cuidadosamente las mejores variedades de frutas chilenas para satisfacer los más altos estándares internacionales.
+        {t('products.description')}
       </p>
     </div>
 
@@ -118,9 +71,9 @@ const products = [
             <p class="text-sm text-gray-500 mb-6 font-medium">{product.varieties}</p>
             
             <div class="space-y-3">
-              <p class="text-xs uppercase tracking-wider text-gray-400 font-semibold">BENEFICIOS PARA LA SALUD</p>
+              <p class="text-xs uppercase tracking-wider text-gray-400 font-semibold">{t('products.benefits.title')}</p>
               <ul class="space-y-2">
-                {product.benefits.map((benefit) => (
+                {product.benefits.map((benefit: string) => (
                   <li class="flex items-start gap-2 text-sm text-gray-600">
                     <svg class="w-4 h-4 text-green-600 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>

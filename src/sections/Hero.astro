@@ -1,6 +1,10 @@
 
 ---
 import HeroImg from '../assets/images/img_hero5.png';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
@@ -17,32 +21,32 @@ import HeroImg from '../assets/images/img_hero5.png';
   <!-- Content -->
   <div class="relative z-10 container mx-auto px-4 text-center text-white mt-20">
     <p class="text-sm md:text-base uppercase tracking-[0.2em] mb-4 text-gray-200 font-medium">
-      Exportación de frutas frescas desde Chile
+      {t('hero.subtitle')}
     </p>
     
     <h1 class="text-5xl md:text-7xl font-serif font-bold mb-2 drop-shadow-lg">
-      Del Campo Chileno
+      {t('hero.title1')}
     </h1>
     <h2 class="text-5xl md:text-7xl font-serif font-bold text-yellow-400 mb-8 drop-shadow-lg">
-      Al Mundo
+      {t('hero.title2')}
     </h2>
 
     <p class="max-w-2xl mx-auto text-lg text-gray-100 mb-10 leading-relaxed drop-shadow-md">
-      NEVADON EXPORT FRESH FRUIT SPA es una empresa chilena dedicada a la exportación de frutas frescas de alta calidad a mercados internacionales.
+      {t('hero.description')}
     </p>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a href="#productos" class="bg-[#EAE7DD] text-[#2C5E38] px-8 py-3 rounded-lg font-bold hover:bg-white transition-colors w-full sm:w-auto shadow-lg">
-        Nuestros Productos
+        {t('hero.cta.products')}
       </a>
       <a href="#contacto" class="border-2 border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white/10 transition-colors w-full sm:w-auto shadow-lg">
-        Contactar Ahora
+        {t('hero.cta.contact')}
       </a>
     </div>
   </div>
   
   <!-- Scroll Indicator -->
-  <a href="#productos" class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-white cursor-pointer hover:text-yellow-400 transition-colors" aria-label="Ir a productos">
+  <a href="#productos" class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-white cursor-pointer hover:text-yellow-400 transition-colors" aria-label={t('hero.scroll')}>
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8">
       <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
     </svg>
