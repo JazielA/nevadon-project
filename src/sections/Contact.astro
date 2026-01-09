@@ -1,3 +1,10 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <section id="contacto" class="py-20 bg-[#F5F5F0]">
   <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -5,7 +12,7 @@
       <!-- Contact Info Card (Left) -->
       <div class=" rounded-3xl p-10 md:p-12 w-full bg-[#2C5E38] text-white flex flex-col justify-between">
         <div>
-          <h3 class="text-2xl font-serif font-bold mb-8">Información de Contacto</h3>
+          <h3 class="text-2xl font-serif font-bold mb-8">{t('contact.info.title')}</h3>
           
           <div class="space-y-6">
             <!-- Phone -->
@@ -16,7 +23,7 @@
                 </svg>
               </div>
               <div>
-                <p class="text-sm text-gray-300 mb-1">Teléfonos</p>
+                <p class="text-sm text-gray-300 mb-1">{t('contact.info.phones')}</p>
                 <div class="space-y-1">
                   <p class="font-medium">+56 9 3354 1003</p>
                   <p class="font-medium">+56 9 3947 2484</p>
@@ -32,7 +39,7 @@
                 </svg>
               </div>
               <div>
-                <p class="text-sm text-gray-300 mb-1">Email</p>
+                <p class="text-sm text-gray-300 mb-1">{t('contact.info.email')}</p>
                 <div class="space-y-1">
                   <div>
                     
@@ -59,8 +66,8 @@
                 </svg>
               </div>
               <div>
-                <p class="text-sm text-gray-300 mb-1">Dirección</p>
-                <p class="font-medium max-w-[250px]">Av. Fernández Albano 797, Torre B Oficina 509 - La Cisterna - Santiago de Chile.</p>
+                <p class="text-sm text-gray-300 mb-1">{t('contact.info.address')}</p>
+                <p class="font-medium max-w-[250px]">{t('contact.info.addressText')}</p>
               </div>
             </div>
           </div>
@@ -68,7 +75,7 @@
 
         <div class="mt-12">
           <div class="h-px w-full bg-white/20 mb-8"></div>
-          <p class="text-sm text-gray-300 mb-4">Exportamos a más de 20 países en todo el mundo</p> 
+          <p class="text-sm text-gray-300 mb-4">{t('contact.info.countries')}</p> 
           <div class="flex flex-wrap gap-3 text-sm font-bold text-[#2C5E38]">
              <!-- Country Codes as simple text or badges? Image shows text. -->
              
@@ -78,50 +85,50 @@
 
       <!-- Contact Form Card (Right) -->
       <div class="rounded-3xl p-10 md:p-12 bg-white shadow-sm flex flex-col justify-center ">
-        <h3 class="text-2xl font-serif font-bold text-[#1a3c25] mb-8">Envíanos un Mensaje</h3>
+        <h3 class="text-2xl font-serif font-bold text-[#1a3c25] mb-8">{t('contact.form.title')}</h3>
         
         <form class="space-y-6" action="https://formsubmit.co/cc04f02a9eb3aa591f1c3cfc3743e17a" method="POST">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="space-y-2">
-              <label for="nombre" class="text-sm font-medium text-gray-700">Nombre</label>
+              <label for="nombre" class="text-sm font-medium text-gray-700">{t('contact.form.name')}</label>
               <input 
                 type="text" 
                 name="Nombre"
                 id="nombre" 
-                placeholder="Tu nombre"
+                placeholder={t('contact.form.namePlaceholder')}
                 class="w-full bg-[#F5F5F0] border-none rounded-lg px-4 py-3 text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-[#2C5E38] focus:outline-none transition-all"
               />
             </div>
             <div class="space-y-2">
-              <label for="email" class="text-sm font-medium text-gray-700">Email</label>
+              <label for="email" class="text-sm font-medium text-gray-700">{t('contact.form.email')}</label>
               <input 
                 type="email"
                 name="Email" 
                 id="email" 
-                placeholder="tu@email.com"
+                placeholder={t('contact.form.emailPlaceholder')}
                 class="w-full bg-[#F5F5F0] border-none rounded-lg px-4 py-3 text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-[#2C5E38] focus:outline-none transition-all"
               />
             </div>
           </div>
 
           <div class="space-y-2">
-            <label for="empresa" class="text-sm font-medium text-gray-700">Empresa</label>
+            <label for="empresa" class="text-sm font-medium text-gray-700">{t('contact.form.subject')}</label>
             <input 
               type="text" 
               id="empresa" 
               name="Empresa"
-              placeholder="Nombre de tu empresa"
+              placeholder={t('contact.form.subjectPlaceholder')}
               class="w-full bg-[#F5F5F0] border-none rounded-lg px-4 py-3 text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-[#2C5E38] focus:outline-none transition-all"
             />
           </div>
 
           <div class="space-y-2">
-            <label for="mensaje" class="text-sm font-medium text-gray-700">Mensaje</label>
+            <label for="mensaje" class="text-sm font-medium text-gray-700">{t('contact.form.message')}</label>
             <textarea 
               id="mensaje" 
               name="Mensaje"
               rows="4" 
-              placeholder="¿Cómo podemos ayudarte?"
+              placeholder={t('contact.form.messagePlaceholder')}
               class="w-full bg-[#F5F5F0] border-none rounded-lg px-4 py-3 text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-[#2C5E38] focus:outline-none transition-all resize-none"
             ></textarea>
           </div>
@@ -130,7 +137,7 @@
             type="submit" 
             class="w-full bg-[#2C5E38] text-white font-bold py-4 rounded-lg hover:bg-[#1a3c25] transition-colors flex items-center justify-center gap-2 mt-4"
           >
-            Enviar Mensaje
+            {t('contact.form.submit')}
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
             </svg>

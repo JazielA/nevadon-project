@@ -1,0 +1,34 @@
+---
+import { languages } from '../i18n/ui';
+import { getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const currentPath = Astro.url.pathname;
+
+// Función para cambiar la URL al otro idioma
+function getLocalizedPath(targetLang: string) {
+  if (targetLang === 'es') {
+    // Si vamos a español, remover el /en/ si existe
+    return currentPath.replace(/^\/en/, '') || '/';
+  } else {
+    // Si vamos a inglés, agregar /en/
+    return currentPath === '/' ? '/en/' : `/en${currentPath}`;
+  }
+}
+---
+
+<div class="flex items-center gap-2">
+  {Object.entries(languages).map(([langCode, label]) => (
+    <a 
+      href={getLocalizedPath(langCode)}
+      class:list={[
+        'px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200',
+        lang === langCode 
+          ? 'bg-[#2C5E38] text-white shadow-sm' 
+          : 'bg-white/50 text-gray-700 hover:bg-white hover:shadow-sm'
+      ]}
+    >
+      {label}
+    </a>
+  ))}
+</div>

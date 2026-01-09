@@ -1,0 +1,64 @@
+{
+  "products": [
+    {
+      "title": "Manzanas",
+      "varieties": "Granny Smith, Fuji, Gala",
+      "benefits": [
+        "Altas en fibra",
+        "Antioxidantes naturales",
+        "Apoyan la salud cardiovascular",
+        "Pueden ayudar a prevenir el cáncer"
+      ]
+    },
+    {
+      "title": "Cerezas",
+      "varieties": "Bing, Lapins, Regina",
+      "benefits": [
+        "Ricas en antioxidantes",
+        "Propiedades antiinflamatorias",
+        "Mejoran el sueño",
+        "Apoyan la salud cardiovascular"
+      ]
+    },
+    {
+      "title": "Paltas",
+      "varieties": "Hass, Fuerte",
+      "benefits": [
+        "Ricas en grasas saludables",
+        "Altas en fibra",
+        "Antioxidantes naturales",
+        "Apoyan la salud ocular"
+      ]
+    },
+    {
+      "title": "Pasas",
+      "varieties": "Uvas secas premium",
+      "benefits": [
+        "Altas en fibra",
+        "Antioxidantes naturales",
+        "Apoyan la salud cardiovascular",
+        "Fuente natural de energía"
+      ]
+    },
+    {
+      "title": "Nueces",
+      "varieties": "Fruto seco premium",
+      "benefits": [
+        "Rico en proteínas",
+        "Alto contenido de grasas saludables",
+        "Contribuye a la salud cardiovascular",
+        "Apoya el buen funcionamiento cerebral"
+      ]
+    },
+    {
+      "title": "Mandarinas",
+      "varieties": "Clementinas, Satsumas",
+      "benefits": [
+        "Rico en vitamina C",
+        "Alto contenido de flavonoides",
+        "Fortalece el sistema inmune",
+        "Apoya la salud cardiovascular"
+      ]
+    }
+  ]
+}

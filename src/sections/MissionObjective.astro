@@ -1,3 +1,10 @@
+---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
 <section id="nosotros" class="py-20 bg-white">
   <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -11,12 +18,12 @@
         </div>
         
         <h3 class="text-3xl font-serif font-bold text-[#1a3c25] mb-6">
-          Nuestra Misión
+          {t('mission.title')}
         </h3>
         
         <div class="space-y-6 text-gray-600 leading-relaxed text-justify">
           <p>
-            Proveer frutas frescas de alta calidad a nuestros clientes en todo el mundo, garantizando la satisfacción de sus necesidades y superando sus expectativas, a través de un compromiso con la calidad, la innovación, la sostenibilidad y la responsabilidad social. Nos esforzamos por ofrecer productos frescos, seguros y saludables, apoyando a nuestros productores locales y promoviendo prácticas agrícolas sostenibles. Buscamos ser un socio confiable y estratégico para nuestros clientes, proveedores y comunidad, contribuyendo al bienestar y desarrollo de las personas y el medio ambiente.
+            {t('mission.content')}
           </p>
           
         </div>
@@ -31,12 +38,12 @@
         </div>
 
         <h3 class="text-3xl font-serif font-bold mb-6">
-          Nuestro Objetivo
+          {t('objective.title')}
         </h3>
 
         <div class="space-y-6 text-gray-200 leading-relaxed text-justify">
           <p>
-            Ser el proveedor líder de frutas frescas en el mercado internacional, reconocido por nuestra calidad, servicio, compromiso con la sostenibilidad y responsabilidad social. Buscamos expandir nuestra presencia global, diversificar nuestra oferta de productos y fortalecer nuestras relaciones con clientes y proveedores, contribuyendo al desarrollo económico y social de nuestra región y promoviendo un futuro más sostenible para las generaciones futuras. Nos esforzamos por ser un modelo de excelencia en la industria, innovando y mejorando continuamente nuestros procesos y prácticas para asegurar la satisfacción de nuestros clientes y el éxito a largo plazo de nuestra empresa.
+            {t('objective.content')}
           </p>
           
         </div>
