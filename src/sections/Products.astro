@@ -97,12 +97,12 @@ const products = [
     <!-- Products Carousel -->
     <div class="relative">
       <div class="swiper mySwiper !pb-12">
-        <div class="swiper-wrapper">
+        <div class="swiper-wrapper !items-stretch">
           {[...products, ...products].map((product) => (
-            <div class="swiper-slide h-auto">
-              <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group h-full">
+            <div class="swiper-slide !h-auto !flex">
+              <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300 group h-full flex flex-col w-full">
           <!-- Image Container -->
-          <div class="relative h-64 overflow-hidden">
+          <div class="relative h-64 overflow-hidden shrink-0">
             <img 
               src={product.image} 
               alt={product.title}
@@ -113,7 +113,7 @@ const products = [
           </div>
 
           <!-- Content -->
-          <div class="p-6">
+          <div class="p-6 flex flex-col flex-1">
             <h3 class="text-2xl font-serif font-bold text-[#1a3c25] mb-1">{product.title}</h3>
             <p class="text-sm text-gray-500 mb-6 font-medium">{product.varieties}</p>
             
