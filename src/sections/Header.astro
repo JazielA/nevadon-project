@@ -22,21 +22,102 @@ const t = useTranslations(lang);
       
     </nav>
 
-    <!-- Language Picker -->
-    <div class="hidden md:block mr-4">
-      <LanguagePicker />
-    </div>
+    
 
     <!-- CTA Button -->
     <a href="#contacto" class="hidden md:block bg-[#2C5E38] text-white px-6 py-2 rounded-full hover:bg-green-900 transition-colors font-medium">
       {t('nav.contact')}
     </a>
 
+    <!-- Language Picker -->
+    <div class="hidden md:block ml-4">
+      <LanguagePicker />
+    </div>
+
     <!-- Mobile Menu Button -->
-    <button class="md:hidden text-gray-600">
+    <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-green-800 transition-colors">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
       </svg>
     </button>
   </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"></div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-[#F5F5F0] shadow-lg z-50 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+    <div class="flex flex-col h-full">
+      <!-- Close Button -->
+      <div class="flex justify-end p-4">
+        <button id="mobile-menu-close" class="text-gray-600 hover:text-green-800 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Links -->
+      <nav class="flex flex-col px-6 space-y-4">
+        <a href="#productos" class="mobile-menu-link text-gray-700 hover:text-green-800 transition-colors font-medium py-3 border-b border-gray-200">
+          {t('nav.products')}
+        </a>
+        <a href="#nosotros" class="mobile-menu-link text-gray-700 hover:text-green-800 transition-colors font-medium py-3 border-b border-gray-200">
+          {t('nav.about')}
+        </a>
+        <a href="#contacto" class="mobile-menu-link bg-[#2C5E38] text-white px-6 py-3 rounded-full hover:bg-green-900 transition-colors font-medium text-center mt-4">
+          {t('nav.contact')}
+        </a>
+      </nav>
+
+      <!-- Language Picker in Mobile Menu -->
+      <div class="px-6 mt-6">
+        <LanguagePicker />
+      </div>
+    </div>
+  </div>
 </header>
+
+<script>
+  // Mobile menu functionality
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+  const mobileMenuClose = document.getElementById('mobile-menu-close');
+  const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+  // Function to open menu
+  function openMobileMenu() {
+    mobileMenu?.classList.remove('translate-x-full');
+    mobileMenuOverlay?.classList.remove('hidden');
+    document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+  }
+
+  // Function to close menu
+  function closeMobileMenu() {
+    mobileMenu?.classList.add('translate-x-full');
+    mobileMenuOverlay?.classList.add('hidden');
+    document.body.style.overflow = ''; // Restore scrolling
+  }
+
+  // Open menu when hamburger button is clicked
+  mobileMenuButton?.addEventListener('click', openMobileMenu);
+
+  // Close menu when X button is clicked
+  mobileMenuClose?.addEventListener('click', closeMobileMenu);
+
+  // Close menu when overlay is clicked
+  mobileMenuOverlay?.addEventListener('click', closeMobileMenu);
+
+  // Close menu when a link is clicked
+  mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+
+  // Close menu when pressing Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeMobileMenu();
+    }
+  });
+</script>
