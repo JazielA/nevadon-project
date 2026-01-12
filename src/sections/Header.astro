@@ -22,15 +22,17 @@ const t = useTranslations(lang);
       
     </nav>
 
-    <!-- Language Picker -->
-    <div class="hidden md:block mr-4">
-      <LanguagePicker />
-    </div>
+    
 
     <!-- CTA Button -->
     <a href="#contacto" class="hidden md:block bg-[#2C5E38] text-white px-6 py-2 rounded-full hover:bg-green-900 transition-colors font-medium">
       {t('nav.contact')}
     </a>
+
+    <!-- Language Picker -->
+    <div class="hidden md:block ml-4">
+      <LanguagePicker />
+    </div>
 
     <!-- Mobile Menu Button -->
     <button class="md:hidden text-gray-600">
