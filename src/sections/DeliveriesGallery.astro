@@ -18,32 +18,32 @@ const deliveryImages = [
   {
     src: imgManzana.src,
     alt: 'Manzanas frescas listas para entrega',
-    label: 'Manzanas',
+    labelKey: 'deliveries.item.apples',
   },
   {
     src: imgCereza.src,
     alt: 'Uvas frescas preparadas para clientes',
-    label: 'Uvas',
+    labelKey: 'deliveries.item.grapes',
   },
   {
     src: imgPalta.src,
     alt: 'Paltas frescas preparadas para despacho',
-    label: 'Paltas',
+    labelKey: 'deliveries.item.avocados',
   },
   {
     src: imgPasas.src,
     alt: 'Mandarinas preparadas en caja',
-    label: 'Mandarinas',
+    labelKey: 'deliveries.item.mandarins',
   },
   {
     src: imgNueces.src,
     alt: 'Nueces frescas listas para distribución',
-    label: 'Nueces',
+    labelKey: 'deliveries.item.walnuts',
   },
   {
     src: imgMandarina.src,
     alt: 'Mandarinas frescas listas para entrega',
-    label: 'Mandarinas',
+    labelKey: 'deliveries.item.mandarins',
   },
 ];
 ---
@@ -81,7 +81,7 @@ const deliveryImages = [
                 <!-- Content -->
                 <div class="p-6 flex flex-col flex-1">
                   <p class="text-xs uppercase tracking-[0.2em] text-[#2C5E38] font-bold mb-1">{t('deliveries.slideLabel')}</p>
-                  <h3 class="text-xl font-serif font-bold text-[#1a3c25]">{image.label}</h3>
+                  <h3 class="text-xl font-serif font-bold text-[#1a3c25]">{t(image.labelKey as keyof typeof import('../i18n/ui').ui['es'])}</h3>
                 </div>
               </div>
             </div>

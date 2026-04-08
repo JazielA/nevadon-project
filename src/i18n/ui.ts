@@ -46,6 +46,11 @@ export const ui = {
         'deliveries.slideLabel': 'Entrega destacada',
         'deliveries.prev': 'Ver imagen anterior',
         'deliveries.next': 'Ver imagen siguiente',
+        'deliveries.item.apples': 'Manzanas',
+        'deliveries.item.grapes': 'Uvas',
+        'deliveries.item.avocados': 'Paltas',
+        'deliveries.item.mandarins': 'Mandarinas',
+        'deliveries.item.walnuts': 'Nueces',
 
         // Contact Section
         'contact.info.title': 'Información de Contacto',
@@ -110,6 +115,11 @@ export const ui = {
         'deliveries.slideLabel': 'Featured delivery',
         'deliveries.prev': 'View previous image',
         'deliveries.next': 'View next image',
+        'deliveries.item.apples': 'Apples',
+        'deliveries.item.grapes': 'Grapes',
+        'deliveries.item.avocados': 'Avocados',
+        'deliveries.item.mandarins': 'Mandarins',
+        'deliveries.item.walnuts': 'Walnuts',
 
         // Contact Section
         'contact.info.title': 'Contact Information',

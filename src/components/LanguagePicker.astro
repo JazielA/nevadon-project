@@ -22,7 +22,8 @@ const label = lang.toUpperCase();
 
 <a 
   href={href}
-  class="flex flex-col items-center justify-center p-1 rounded-lg text-gray-600 hover:text-[#2C5E38] hover:bg-gray-50 transition-all duration-200 group"
+  data-base-url={href}
+  class="lang-picker-link flex flex-col items-center justify-center p-1 rounded-lg text-gray-600 hover:text-[#2C5E38] hover:bg-gray-50 transition-all duration-200 group"
   aria-label={`Cambiar idioma a ${nextLang === 'es' ? 'Español' : 'English'}`}
 >
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 group-hover:scale-110 transition-transform">
@@ -30,3 +31,34 @@ const label = lang.toUpperCase();
   </svg>
   <span class="text-[10px] font-bold leading-none mt-0.5">{label}</span>
 </a>
+
+<script>
+  function updateLangPickerHash() {
+    const sections = document.querySelectorAll('section[id]');
+    let currentSectionId = '';
+    
+    // Detect which section is currently mostly visible in the viewport
+    sections.forEach(section => {
+      const rect = section.getBoundingClientRect();
+      // If the top of the section is anywhere from the top to half the screen down
+      // OR if the section covers the top half of the screen
+      if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 3) {
+        currentSectionId = section.id;
+      }
+    });
+
+    const links = document.querySelectorAll('.lang-picker-link');
+    links.forEach(link => {
+      const baseUrl = link.getAttribute('data-base-url');
+      if (baseUrl) {
+        link.setAttribute('href', currentSectionId ? `${baseUrl}#${currentSectionId}` : baseUrl);
+      }
+    });
+  }
+
+  // Update hash when scrolling or clicking
+  window.addEventListener('scroll', updateLangPickerHash, { passive: true });
+  window.addEventListener('DOMContentLoaded', updateLangPickerHash);
+  // Also run it immediately just in case
+  updateLangPickerHash();
+</script>
