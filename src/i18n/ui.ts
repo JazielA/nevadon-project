@@ -35,6 +35,23 @@ export const ui = {
         'objective.title': 'Nuestro Objetivo',
         'objective.content': 'Ser el proveedor líder de frutas frescas en el mercado internacional, reconocido por nuestra calidad, servicio, compromiso con la sostenibilidad y responsabilidad social. Buscamos expandir nuestra presencia global, diversificar nuestra oferta de productos y fortalecer nuestras relaciones con clientes y proveedores, contribuyendo al desarrollo económico y social de nuestra región y promoviendo un futuro más sostenible para las generaciones futuras. Nos esforzamos por ser un modelo de excelencia en la industria, innovando y mejorando continuamente nuestros procesos y prácticas para asegurar la satisfacción de nuestros clientes y el éxito a largo plazo de nuestra empresa.',
 
+        // Deliveries Gallery Section
+        'deliveries.badge': 'Entregas',
+        'deliveries.title': 'Lo que Reciben Nuestros Clientes',
+        'deliveries.description': 'Imágenes reales de la fruta que distribuimos diariamente a nuestros clientes.',
+        'deliveries.card1.title': 'Pedido listo',
+        'deliveries.card1.description': 'Comparte fotografías de los lotes seleccionados antes de su despacho final.',
+        'deliveries.card2.title': 'Seguimiento visual',
+        'deliveries.card2.description': 'Usa este espacio para subir imágenes reales de entregas a clientes y fortalecer la confianza.',
+        'deliveries.slideLabel': 'Entrega destacada',
+        'deliveries.prev': 'Ver imagen anterior',
+        'deliveries.next': 'Ver imagen siguiente',
+        'deliveries.item.apples': 'Manzanas',
+        'deliveries.item.grapes': 'Uvas',
+        'deliveries.item.avocados': 'Paltas',
+        'deliveries.item.mandarins': 'Mandarinas',
+        'deliveries.item.walnuts': 'Nueces',
+
         // Contact Section
         'contact.info.title': 'Información de Contacto',
         'contact.info.phones': 'Teléfonos',
@@ -86,6 +103,23 @@ export const ui = {
         // Objective Section
         'objective.title': 'Our Objective',
         'objective.content': 'To be the leading provider of fresh fruits in the international market, recognized for our quality, service, commitment to sustainability, and social responsibility. We aim to expand our global presence, diversify our product offering, and strengthen our relationships with customers and suppliers, contributing to the economic and social development of our region and promoting a more sustainable future for future generations. We strive to be a model of excellence in the industry, continuously innovating and improving our processes and practices to ensure customer satisfaction and the long-term success of our company.',
+
+        // Deliveries Gallery Section
+        'deliveries.badge': 'Deliveries',
+        'deliveries.title': 'Products prepared for our customers',
+        'deliveries.description': 'A reference gallery to showcase images of orders prepared, packed, and ready for delivery or export.',
+        'deliveries.card1.title': 'Ready to ship',
+        'deliveries.card1.description': 'Share photos of selected batches before the final dispatch.',
+        'deliveries.card2.title': 'Visual tracking',
+        'deliveries.card2.description': 'Use this space to upload real customer delivery images and build trust.',
+        'deliveries.slideLabel': 'Featured delivery',
+        'deliveries.prev': 'View previous image',
+        'deliveries.next': 'View next image',
+        'deliveries.item.apples': 'Apples',
+        'deliveries.item.grapes': 'Grapes',
+        'deliveries.item.avocados': 'Avocados',
+        'deliveries.item.mandarins': 'Mandarins',
+        'deliveries.item.walnuts': 'Walnuts',
 
         // Contact Section
         'contact.info.title': 'Contact Information',
